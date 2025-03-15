@@ -29,8 +29,9 @@
                 </thead>
                 <tbody>
                     <?php
-                        require_once('bd.php');
-                        require_once('traitement.php');
+                        require_once('../Model/bd.php');
+                        require_once('../Controller/traitement.php');
+                        $conn = openConnection();
                         $liste = getAllComptes($conn);
                         $i=0;
                         while($row = mysqli_fetch_assoc($liste)){
@@ -40,7 +41,7 @@
                             echo "<td>".$i."</td>";
                             echo "<td>".$row['titulaire']."</td>";
                             echo "<td>".$row['solde']."</td>";
-                            echo "<td><a href='delete.php?id=$id' class='btn btn-danger'>Sup</a></td>";
+                            echo "<td><a href='../Controller/traitement.php?id=$id' class='btn btn-danger'>Sup</a><a style='margin-left:5px;' href='editer.php?idM=$id' class='btn btn-primary'>Edit</a></td>";
                             echo   "</tr>";
                         }
                     ?>
