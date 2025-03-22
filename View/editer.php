@@ -21,7 +21,7 @@
                         <?php 
                             require_once("../Controller/traitement.php");
                             $id = $_GET['idM'];
-                            $compteUpdate =mysqli_fetch_assoc(getCompte($id)) ;
+                            $compteUpdate =getCompte($id) ;
                         ?>
                         <label class="form-label">Modifier Le Nom du Titulaire Numero <?php echo $id; ?> </label>
                         <input type="text" class="form-control" value="<?php echo $compteUpdate['titulaire']; ?>" name="titulaire" required>

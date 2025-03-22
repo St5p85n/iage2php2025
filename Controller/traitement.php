@@ -1,5 +1,5 @@
 <?php
-    require_once('../Model/bd.php');
+    require_once('../Model/dbpdo.php');
     if(isset($_POST['ajouter'])){
         $nom =htmlspecialchars($_POST['titulaire']);
         $solde=htmlspecialchars($_POST['solde']);

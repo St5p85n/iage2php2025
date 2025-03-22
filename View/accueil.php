@@ -29,12 +29,12 @@
                 </thead>
                 <tbody>
                     <?php
-                        require_once('../Model/bd.php');
+                        require_once('../Model/dbpdo.php');
                         require_once('../Controller/traitement.php');
                         $conn = openConnection();
                         $liste = getAllComptes($conn);
                         $i=0;
-                        while($row = mysqli_fetch_assoc($liste)){
+                        foreach($liste as $row){
                             $i++;
                             $id =$row['id'];
                             echo "<tr>";
